@@ -29,7 +29,7 @@ def getRoutes(request):
             'description': 'Creates Note'
         },
         {
-            'Endpoint': '/Tasks/id/update/',
+            'Endpoint': '/tasks/id/update/',
             'method': 'PUT',
             'body': {'body': ""},
             'description': 'Updates Note'
