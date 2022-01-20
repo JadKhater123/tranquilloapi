@@ -11,31 +11,31 @@ from .models import Task
 def getRoutes(request):
     routes = [
         {
-            'Endpoint': '/Tasks/',
+            'Endpoint': '/tasks/',
             'method': 'GET',
             'body': 'none',
             'description': 'Returns and Array of Notes'
         },
         {
-            'Endpoint': '/Tasks/id',
+            'Endpoint': '/tasks/id/',
             'method': 'GET',
             'body': 'none',
             'description': 'Returns a single note object'
         },
         {
-            'Endpoint': '/Tasks/id/create',
-            'method': 'GET',
-            'body': 'none',
+            'Endpoint': '/tasks/create/',
+            'method': 'POST',
+            'body': {'body': ""},
             'description': 'Creates Note'
         },
         {
-            'Endpoint': '/Tasks/id/update',
-            'method': 'GET',
-            'body': 'none',
+            'Endpoint': '/Tasks/id/update/',
+            'method': 'PUT',
+            'body': {'body': ""},
             'description': 'Updates Note'
         },
         {
-            'Endpoint': '/Tasks/id/delete',
+            'Endpoint': '/Tasks/id/delete/',
             'method': 'GET',
             'body': 'none',
             'description': 'Deletes Note'
@@ -49,24 +49,24 @@ def getRoutes(request):
         {
             'Endpoint': '/Profile/id/',
             'method': 'GET',
-            'body': 'none',
+            'body': "none",
             'description': 'returns a single profile object',
         },
         {
-            'Endpoint': '/Profile/id/create',
-            'method': 'GET',
+            'Endpoint': '/Profile/create/',
+            'method': 'POST',
             'body': 'none',
             'description': 'creates profile',
         },
         {
             'Endpoint': '/Profile/id/update',
-            'method': 'GET',
+            'method': 'PUT',
             'body': 'none',
             'description': 'updates profile',
         },
         {
             'Endpoint': '/Profile/id/delete',
-            'method': 'GET',
+            'method': 'DELETE',
             'body': 'none',
             'description': 'deletes profile',
         },
