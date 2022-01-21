@@ -42,31 +42,31 @@ def getRoutes(request):
             'description': 'Deletes Note'
         },
         {
-            'Endpoint': '/Profile/',
+            'Endpoint': '/profiles/',
             'method': 'GET',
             'body': 'none',
             'description': 'returns an array of profiles',
         },
         {
-            'Endpoint': '/Profile/id/',
+            'Endpoint': '/profiles/id/',
             'method': 'GET',
             'body': "none",
             'description': 'returns a single profile object',
         },
         {
-            'Endpoint': '/Profile/create/',
+            'Endpoint': '/profiles/create/',
             'method': 'POST',
             'body': {'body': ""},
             'description': 'creates profile',
         },
         {
-            'Endpoint': '/Profile/id/update/',
+            'Endpoint': '/profiles/id/update/',
             'method': 'PUT',
             'body': {'body': ""},
             'description': 'updates profile',
         },
         {
-            'Endpoint': '/Profile/id/delete/',
+            'Endpoint': '/profiles/id/delete/',
             'method': 'DELETE',
             'body': 'none',
             'description': 'deletes profile',
