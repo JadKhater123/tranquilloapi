@@ -152,7 +152,8 @@ def getTask (request, pk):
 def createTask(request):
     data = request.data 
     task = Task.objects.create(
-        body=data['body']
+        body=data['body'],
+        title=data['title']
     )
     serializer = TaskSerializer(task, many = False)
     return Response(serializer.data)

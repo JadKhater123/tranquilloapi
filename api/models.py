@@ -79,7 +79,7 @@ StatusChoices = (
 class Task(models.Model):
 	dateOfTask = models.TextField(default=datetime.date.today)
 	Status = models.CharField(max_length=25, choices=StatusChoices, default='Not Started')
-	title = models.TextField(default='Enter a Title')
+	title = models.TextField()
 	body = models.TextField()
 	updated = models.DateTimeField(auto_now = True)
 	created = models.DateTimeField(auto_now_add = True)
