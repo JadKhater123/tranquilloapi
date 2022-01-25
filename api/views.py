@@ -173,123 +173,123 @@ def deleteTask(request, pk):
     task.delete()
     return Response('Note was deleted.')
 
-#
-# Profile
-#
+# #
+# # Profile
+# #
 
-@api_view(['GET'])
-def getProfiles (request):
-    profiles = Profile.objects.all()
-    serializer = ProfileSerializer(profiles, many = True)
-    return Response(serializer.data)
+# @api_view(['GET'])
+# def getProfiles (request):
+#     profiles = Profile.objects.all()
+#     serializer = ProfileSerializer(profiles, many = True)
+#     return Response(serializer.data)
 
-@api_view(['GET'])
-def getProfile (request, pk):
-    profile = Profile.objects.get(id=pk)
-    serializer = ProfileSerializer(profile, many = False)
-    return Response(serializer.data)
+# @api_view(['GET'])
+# def getProfile (request, pk):
+#     profile = Profile.objects.get(id=pk)
+#     serializer = ProfileSerializer(profile, many = False)
+#     return Response(serializer.data)
 
-@api_view(['POST'])
-def createProfile(request):
-    data = request.data 
-    profile = Profile.objects.create(
-        body=data['body']
-    )
-    serializer = ProfileSerializer(profile, many = False)
-    return Response(serializer.data)
+# @api_view(['POST'])
+# def createProfile(request):
+#     data = request.data 
+#     profile = Profile.objects.create(
+#         body=data['body']
+#     )
+#     serializer = ProfileSerializer(profile, many = False)
+#     return Response(serializer.data)
 
-@api_view(['PUT'])
-def updateProfile(request, pk):
-    data = request.data 
-    profile = Profile.objects.get(id=pk)
-    serializer = ProfileSerializer(profile, data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-    return Response(serializer.data)
+# @api_view(['PUT'])
+# def updateProfile(request, pk):
+#     data = request.data 
+#     profile = Profile.objects.get(id=pk)
+#     serializer = ProfileSerializer(profile, data=request.data)
+#     if serializer.is_valid():
+#         serializer.save()
+#     return Response(serializer.data)
 
-@api_view(['DELETE'])
-def deleteProfile(request, pk):
-    profile = Profile.objects.get(id=pk)
-    profile.delete()
-    return Response('Note was deleted.')
+# @api_view(['DELETE'])
+# def deleteProfile(request, pk):
+#     profile = Profile.objects.get(id=pk)
+#     profile.delete()
+#     return Response('Note was deleted.')
 
-#
-# Goal
-#
+# #
+# # Goal
+# #
 
-@api_view(['GET'])
-def getGoals (request):
-    goal = Goal.objects.all()
-    serializer = GoalSerializer(goal, many = True)
-    return Response(serializer.data)
+# @api_view(['GET'])
+# def getGoals (request):
+#     goal = Goal.objects.all()
+#     serializer = GoalSerializer(goal, many = True)
+#     return Response(serializer.data)
 
-@api_view(['GET'])
-def getGoal (request, pk):
-    goal = Goal.objects.get(id=pk)
-    serializer = GoalSerializer(goal, many = False)
-    return Response(serializer.data)
+# @api_view(['GET'])
+# def getGoal (request, pk):
+#     goal = Goal.objects.get(id=pk)
+#     serializer = GoalSerializer(goal, many = False)
+#     return Response(serializer.data)
 
-@api_view(['POST'])
-def createGoal(request):
-    data = request.data 
-    goal = Goal.objects.create(
-        body=data['body']
-    )
-    serializer = GoalSerializer(goal, many = False)
-    return Response(serializer.data)
+# @api_view(['POST'])
+# def createGoal(request):
+#     data = request.data 
+#     goal = Goal.objects.create(
+#         body=data['body']
+#     )
+#     serializer = GoalSerializer(goal, many = False)
+#     return Response(serializer.data)
 
-@api_view(['PUT'])
-def updateGoal(request, pk):
-    data = request.data 
-    goal = Goal.objects.get(id=pk)
-    serializer = GoalSerializer(goal, data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-    return Response(serializer.data)
+# @api_view(['PUT'])
+# def updateGoal(request, pk):
+#     data = request.data 
+#     goal = Goal.objects.get(id=pk)
+#     serializer = GoalSerializer(goal, data=request.data)
+#     if serializer.is_valid():
+#         serializer.save()
+#     return Response(serializer.data)
 
-@api_view(['DELETE'])
-def deleteGoal(request, pk):
-    goal = Goal.objects.get(id=pk)
-    goal.delete()
-    return Response('Note was deleted.')
+# @api_view(['DELETE'])
+# def deleteGoal(request, pk):
+#     goal = Goal.objects.get(id=pk)
+#     goal.delete()
+#     return Response('Note was deleted.')
 
-#
-# Journal
-#
+# #
+# # Journal
+# #
 
-@api_view(['GET'])
-def getJournals (request):
-    journals = Journal.objects.all()
-    serializer = JournalSerializer(journals, many = True)
-    return Response(serializer.data)
+# @api_view(['GET'])
+# def getJournals (request):
+#     journals = Journal.objects.all()
+#     serializer = JournalSerializer(journals, many = True)
+#     return Response(serializer.data)
 
-@api_view(['GET'])
-def getJournal (request, pk):
-    journal = Journal.objects.get(id=pk)
-    serializer = JournalSerializer(journal, many = False)
-    return Response(serializer.data)
+# @api_view(['GET'])
+# def getJournal (request, pk):
+#     journal = Journal.objects.get(id=pk)
+#     serializer = JournalSerializer(journal, many = False)
+#     return Response(serializer.data)
 
-@api_view(['POST'])
-def createJournal(request):
-    data = request.data 
-    journal = Journal.objects.create(
-        body=data['body']
-    )
-    serializer = JournalSerializer(journal, many = False)
-    return Response(serializer.data)
+# @api_view(['POST'])
+# def createJournal(request):
+#     data = request.data 
+#     journal = Journal.objects.create(
+#         body=data['body']
+#     )
+#     serializer = JournalSerializer(journal, many = False)
+#     return Response(serializer.data)
 
-@api_view(['PUT'])
-def updateTask(request, pk):
-    data = request.data 
-    journal = Journal.objects.get(id=pk)
-    serializer = JournalSerializer(journal, data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-    return Response(serializer.data)
+# @api_view(['PUT'])
+# def updateTask(request, pk):
+#     data = request.data 
+#     journal = Journal.objects.get(id=pk)
+#     serializer = JournalSerializer(journal, data=request.data)
+#     if serializer.is_valid():
+#         serializer.save()
+#     return Response(serializer.data)
 
-@api_view(['DELETE'])
-def deleteJournal(request, pk):
-    journal = Journal.objects.get(id=pk)
-    journal.delete()
-    return Response('Note was deleted.')
+# @api_view(['DELETE'])
+# def deleteJournal(request, pk):
+#     journal = Journal.objects.get(id=pk)
+#     journal.delete()
+#     return Response('Note was deleted.')
 
